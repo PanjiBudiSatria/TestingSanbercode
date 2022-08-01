@@ -17,43 +17,43 @@ class TestAdmin(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
-    # def test_a_addEntitlements(self):
-    #     driver=self.driver
-    #     driver.maximize_window()
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
-    #     time.sleep(3)
+    def test_a_addEntitlements(self):
+        driver=self.driver
+        driver.maximize_window()
+        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
+        time.sleep(3)
 
-    #     #Proses Login
-    #     driver.find_element(By.ID,"txtUsername").send_keys("Admin")
-    #     driver.find_element(By.ID,"txtPassword").send_keys("admin123")
-    #     driver.find_element(By.ID,"btnLogin").click()
-    #     time.sleep(2)
+        #Proses Login
+        driver.find_element(By.ID,"txtUsername").send_keys("Admin")
+        driver.find_element(By.ID,"txtPassword").send_keys("admin123")
+        driver.find_element(By.ID,"btnLogin").click()
+        time.sleep(2)
 
-    #     #sementara hover
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/leave/addLeaveEntitlement")
-    #     time.sleep(2)
+        #sementara hover
+        driver.get("https://opensource-demo.orangehrmlive.com/index.php/leave/addLeaveEntitlement")
+        time.sleep(2)
 
-    #     empName = driver.find_element(By.ID,"entitlements_employee_empName")
-    #     empName.send_keys("Fion")
-    #     empName.send_keys(Keys.ARROW_DOWN)
-    #     empName.send_keys(Keys.ENTER)
-    #     time.sleep(1)
+        empName = driver.find_element(By.ID,"entitlements_employee_empName")
+        empName.send_keys("Fion")
+        empName.send_keys(Keys.ARROW_DOWN)
+        empName.send_keys(Keys.ENTER)
+        time.sleep(1)
 
-    #     select = Select(driver.find_element(By.ID,"entitlements_leave_type"))
-    #     select.select_by_visible_text("US - Personal")
-    #     time.sleep(1)
+        select = Select(driver.find_element(By.ID,"entitlements_leave_type"))
+        select.select_by_visible_text("US - Personal")
+        time.sleep(1)
 
-    #     select = Select(driver.find_element(By.ID,"period"))
-    #     select.select_by_visible_text("2022-01-01 - 2022-12-31")
-    #     time.sleep(1)
+        select = Select(driver.find_element(By.ID,"period"))
+        select.select_by_visible_text("2022-01-01 - 2022-12-31")
+        time.sleep(1)
 
-    #     driver.find_element(By.ID,"entitlements_entitlement").send_keys("15")
+        driver.find_element(By.ID,"entitlements_entitlement").send_keys("15")
 
-    #     driver.find_element(By.ID,"btnSave").click()
-    #     time.sleep(5)
+        driver.find_element(By.ID,"btnSave").click()
+        time.sleep(5)
 
-    #     validation_text = driver.find_element(By.XPATH,"/html/body/div[1]/div[3]/div[2]/div/form/div[4]/table/tbody/tr/td[5]/a").text
-    #     self.assertEqual(validation_text,"15.00")
+        validation_text = driver.find_element(By.XPATH,"/html/body/div[1]/div[3]/div[2]/div/form/div[4]/table/tbody/tr/td[5]/a").text
+        self.assertEqual(validation_text,"15.00")
 
     def test_b_assignLeave(self):
         driver=self.driver
