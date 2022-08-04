@@ -41,70 +41,43 @@ class TestTime(unittest.TestCase):
         response_data_cust = driver.find_element(By.LINK_TEXT,"ElektroArts").text
         self.assertEqual(response_data_cust,"ElektroArts")
 
-    # def test_b_time_editUser(self):
-    #     driver=self.driver
-    #     driver.maximize_window()
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
-    #     time.sleep(3)
-    #     driver.find_element(By.ID,"txtUsername").send_keys("Admin")
-    #     time.sleep(1)
-    #     driver.find_element(By.ID,"txtPassword").send_keys("admin123")
-    #     time.sleep(1)
-    #     driver.find_element(By.ID,"btnLogin").click()
-    #     time.sleep(2)
+    def test_b_time_editUser(self):
+        driver=self.driver
+        driver.maximize_window()
+        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
+        time.sleep(3)
+        driver.find_element(By.ID,"txtUsername").send_keys("Admin")
+        time.sleep(1)
+        driver.find_element(By.ID,"txtPassword").send_keys("admin123")
+        time.sleep(1)
+        driver.find_element(By.ID,"btnLogin").click()
+        time.sleep(2)
 
-    #     driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/ul/li[4]/a/b").click()
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/admin/viewCustomers")
-    #     time.sleep(2)
+        driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/ul/li[4]/a/b").click()
+        driver.get("https://opensource-demo.orangehrmlive.com/index.php/admin/viewCustomers")
+        time.sleep(2)
 
-    #     driver.find_element(By.LINK_TEXT,"ElektroArts").click()
-    #     time.sleep(2)
+        driver.find_element(By.LINK_TEXT,"ElektroArts").click()
+        time.sleep(2)
 
-    #     elements=driver.find_element(By.TAG_NAME,"btnSave")
-    #     for element in elements:
-    #         if element.get_attribute("value")=="Edit":
-    #             element.click()
-    #     time.sleep(1)
+        elements=driver.find_element(By.ID,"btnSave")
+        elements.click()
+        # for element in elements:
+        #     if element.get_attribute("value")=="Edit":
+        #         element.click()
+        time.sleep(1)
 
-    #     driver.find_element(By.ID,"addCustomer_customerName").clear()
-    #     driver.find_element(By.ID,"addCustomer_customerName").send_keys("ElektroArts1")
+        driver.find_element(By.ID,"addCustomer_customerName").clear()
+        driver.find_element(By.ID,"addCustomer_customerName").send_keys("ElektroArts1")
 
-    #     elements=driver.find_element(By.TAG_NAME,"btnSave")
-    #     for element in elements:
-    #         if element.get_attribute("value")=="Save":
-    #             element.click()
-    #     time.sleep(1)
+        elements=driver.find_element(By.ID,"btnSave")
+        elements.click()
+        time.sleep(1)
 
-    #     response_data_edit = driver.find_element(By.LINK_TEXT,"ElektroArts1").text
-    #     self.assertEqual(response_data_edit,"ElektroArts1")
+        response_data_edit = driver.find_element(By.LINK_TEXT,"ElektroArts1").text
+        self.assertEqual(response_data_edit,"ElektroArts1")
 
-    # def test_c_time_deleteCustomer(self):
-    #     driver=self.driver
-    #     driver.maximize_window()
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
-    #     time.sleep(3)
-    #     driver.find_element(By.ID,"txtUsername").send_keys("Admin")
-    #     time.sleep(1)
-    #     driver.find_element(By.ID,"txtPassword").send_keys("admin123")
-    #     time.sleep(1)
-    #     driver.find_element(By.ID,"btnLogin").click()
-    #     time.sleep(2)
-
-    #     driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/ul/li[4]/a/b").click()
-    #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/admin/viewCustomers")
-    #     time.sleep(2)
-
-    #     driver.find_element(By.ID,"ohrmList_chkSelectRecord_7").click()
-
-    #     driver.find_element(By.ID,"btnDelete").click()
-    #     time.sleep(1)
-
-    #     driver.find_element(By.ID,"dialogDeleteBtn").click()
-    #     time.sleep(1)
-
-    #     #Cara assertnya kek mana ini
-
-    # def test_d_time_punchInOUT(self):
+    # def test_c_time_punchInOUT(self):
     #     driver=self.driver
     #     driver.maximize_window()
     #     driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login")
@@ -124,10 +97,15 @@ class TestTime(unittest.TestCase):
     #     date_input.click()
     #     date_input.clear()
     #     date_input.send_keys("2022-07-11")
-    #     date_input.send_keys(Keys.ENTER)
+    #     time.sleep(1)
     #     date_input.send_keys(Keys.ENTER)
     #     time.sleep(1)
+    #     date_input.send_keys(Keys.ENTER)
+    #     time.sleep(1)
+    #     driver.find_element(By.ID,"attendance_time").clear()
+    #     time.sleep(1)
     #     driver.find_element(By.ID,"attendance_time").send_keys("22:11")
+    #     time.sleep(1)
     #     driver.find_element(By.ID,"btnPunch").click
     #     time.sleep(1)
 
@@ -135,10 +113,15 @@ class TestTime(unittest.TestCase):
     #     date_input.click()
     #     date_input.clear()
     #     date_input.send_keys("2022-07-11")
-    #     date_input.send_keys(Keys.ENTER)
+    #     time.sleep(1)
     #     date_input.send_keys(Keys.ENTER)
     #     time.sleep(1)
+    #     date_input.send_keys(Keys.ENTER)
+    #     time.sleep(1)
+    #     driver.find_element(By.ID,"attendance_time").clear()
+    #     time.sleep(1)
     #     driver.find_element(By.ID,"attendance_time").send_keys("23:11")
+    #     time.sleep(1)
     #     driver.find_element(By.ID,"punchOutbutton").click
     #     time.sleep(1)
 
@@ -155,7 +138,9 @@ class TestTime(unittest.TestCase):
     #     date_input.click()
     #     date_input.clear()
     #     date_input.send_keys("2022-07-11")
+    #     time.sleep(1)
     #     date_input.send_keys(Keys.ENTER)
+    #     time.sleep(1)
     #     date_input.send_keys(Keys.ENTER)
     #     time.sleep(1)
 

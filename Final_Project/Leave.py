@@ -83,7 +83,9 @@ class TestAdmin(unittest.TestCase):
         date_input = driver.find_element(By.ID,"assignleave_txtFromDate")
         date_input.click()
         date_input.send_keys("2022-07-11")
+        time.sleep(1)
         date_input.send_keys(Keys.ENTER)
+        time.sleep(1)
         date_input.send_keys(Keys.ENTER)
         time.sleep(5)
 
@@ -92,6 +94,7 @@ class TestAdmin(unittest.TestCase):
         date_input.clear()
         date_input.send_keys("2022-07-12")
         date_input.send_keys(Keys.ENTER)
+        time.sleep(1)
         date_input.send_keys(Keys.ENTER)
         time.sleep(5)
 
