@@ -21,9 +21,6 @@ class TestLogin(unittest.TestCase):
         time.sleep(1)
         driver.find_element(By.ID,"btnSearchValues").click()
 
-        response_data = driver.find_element(By.XPATH,"").text
-
-        self.assertEqual(response_data,"Please contact HR admin in order to reset the password")
 
 if __name__ == "__main__":
     unittest.main()
