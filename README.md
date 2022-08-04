@@ -1,4 +1,3 @@
-﻿# TestingSanbercode
+﻿# Final Project SanberCode
 
-jangan di nilai dulu bu,
-saya sudah japri untuk dikumpulkan maksimal kamis malam
+Manual and Automation testing on https://opensource-demo.orangehrmlive.com/
